@@ -10,17 +10,11 @@ import pageobjects.AcceptCookiesPage;
 import pageobjects.GoogleResultPage;
 import pageobjects.GoogleSearchPage;
 
-public class GoogleSearchSteps extends Initialization{
+public class GoogleSearchSteps extends Initialization {
 	
 	GoogleSearchPage googleSearchPage;
 	GoogleResultPage googleResultPage;
 	AcceptCookiesPage acceptCookiesPage;
-	
-	@Before()
-      public void init() {
-		
-         setWebDriver(driver,"chrome");    
-    }
 
 	@Given("I am on the Google search page")
 	public void i_am_on_the_Google_search_page() {
@@ -44,8 +38,4 @@ public class GoogleSearchSteps extends Initialization{
 		googleResultPage.checkTitle(keyValue);
 	}
 
-	@After
-	public void tearDown() {
-		getDriver().quit();
-	}
 }
